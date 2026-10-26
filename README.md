@@ -12,14 +12,14 @@ Swift Package Manager distribution for the AIHelp iOS SDK.
 In Xcode, choose **File > Add Package Dependencies** and enter:
 
 ```
-https://github.com/AI-HELP/sdk-ios-spm.git
+https://github.com/AI-HELP/aihelp-ios-sdk.git
 ```
 
 Or declare the dependency in `Package.swift`. Release versions are git tags.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/AI-HELP/sdk-ios-spm.git", from: "6.3.0")
+    .package(url: "https://github.com/AI-HELP/aihelp-ios-sdk.git", from: "6.3.0")
 ]
 ```
 
