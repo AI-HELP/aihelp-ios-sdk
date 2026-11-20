@@ -10,6 +10,14 @@ let package = Package(
         .library(
             name: "AIHelpSupportSDK",
             targets: ["AIHelpSupportSDK", "AIHelpResources"]
+        ),
+        .library(
+            name: "AIHelpSupportSDKCore",
+            targets: ["AIHelpSupportSDK"]
+        ),
+        .library(
+            name: "AIHelpResources",
+            targets: ["AIHelpResources"]
         )
     ],
     targets: [
@@ -24,7 +32,8 @@ let package = Package(
             exclude: [],
             sources: ["AIHelpResources.m"],
             resources: [
-                .copy("AIHelpSupportSDK.bundle")
+                .copy("Resources/Image"),
+                .copy("Resources/lan")
             ],
             publicHeadersPath: "include"
         )

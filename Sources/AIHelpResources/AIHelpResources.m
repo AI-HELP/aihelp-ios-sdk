@@ -3,7 +3,5 @@
 
 NSBundle *AIHelpResourcesBundle(void) __attribute__((used));
 NSBundle *AIHelpResourcesBundle(void) {
-    NSURL *url = [SWIFTPM_MODULE_BUNDLE URLForResource:@"AIHelpSupportSDK" withExtension:@"bundle"];
-    NSBundle *bundle = [NSBundle bundleWithURL:url];
-    return bundle ?: SWIFTPM_MODULE_BUNDLE;
+    return SWIFTPM_MODULE_BUNDLE;
 }
