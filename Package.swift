@@ -9,6 +9,14 @@ let package = Package(
     products: [
         .library(
             name: "AIHelpSupportSDK",
+            targets: ["AIHelpSupportSDK"]
+        ),
+        .library(
+            name: "AIHelpSupportSDKCore",
+            targets: ["AIHelpSupportSDKBinary"]
+        ),
+        .library(
+            name: "AIHelpResources",
             targets: ["AIHelpResources"]
         )
     ],
@@ -19,13 +27,22 @@ let package = Package(
         ),
         .target(
             name: "AIHelpResources",
-            dependencies: ["AIHelpSupportSDKBinary"],
             path: "Sources/AIHelpResources",
             sources: ["AIHelpResources.m"],
             resources: [
                 .copy("Resources/Image"),
                 .copy("Resources/lan")
             ],
+            publicHeadersPath: "include"
+        ),
+        .target(
+            name: "AIHelpSupportSDK",
+            dependencies: [
+                "AIHelpSupportSDKBinary",
+                "AIHelpResources"
+            ],
+            path: "Sources/AIHelpSupportSDK",
+            sources: ["AIHelpSupportSDKAggregate.m"],
             publicHeadersPath: "include"
         )
     ]

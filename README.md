@@ -23,7 +23,12 @@ dependencies: [
 ]
 ```
 
-Add the `AIHelpSupportSDK` product to your target:
+Add one product to each target:
+
+- App target: `AIHelpSupportSDK`. This links the SDK binary and the resource bundle.
+- Unity or an intermediate framework: `AIHelpSupportSDKCore` on the framework target, and `AIHelpResources` on the final App target. The framework runs the SDK code. The App target is what makes Xcode copy `AIHelpSupportSDK_AIHelpResources.bundle` into the `.app`.
+
+Do not add `AIHelpSupportSDK` to both the framework and the App. That links the SDK binary twice.
 
 ```swift
 .product(name: "AIHelpSupportSDK", package: "AIHelpSupportSDK")
